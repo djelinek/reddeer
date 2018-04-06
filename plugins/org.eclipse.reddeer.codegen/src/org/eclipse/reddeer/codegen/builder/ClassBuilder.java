@@ -367,7 +367,7 @@ public class ClassBuilder {
 	 * 
 	 * @return true/false
 	 */
-	public boolean constainsimport(String imp) {
+	public boolean constainsImport(String imp) {
 		return imports.contains(imp);
 	}
 

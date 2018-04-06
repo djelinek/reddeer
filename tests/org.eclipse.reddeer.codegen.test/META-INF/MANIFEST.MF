@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RedDeer CodeGen Tests
+Bundle-Vendor: Eclipse.org - RedDeer
+Bundle-SymbolicName: org.eclipse.reddeer.codegen.test;singleton:=true
+Bundle-Version: 2.1.0.Final
+Bundle-Activator: org.eclipse.reddeer.codegen.test.Activator
+Require-Bundle: org.eclipse.reddeer.go;bundle-version="[2.1.0,2.2.0)",
+ org.eclipse.reddeer.codegen;bundle-version="2.1.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
