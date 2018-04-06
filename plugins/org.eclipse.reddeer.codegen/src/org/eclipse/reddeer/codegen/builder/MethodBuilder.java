@@ -78,7 +78,7 @@ public class MethodBuilder implements Comparable<MethodBuilder> {
 	 * @return method builder
 	 */
 	public static MethodBuilder constructor(String name) {
-		return new MethodBuilder().returnType("").name(name);
+		return new MethodBuilder().returnType("").rule("Constructor").name(name);
 	}
 
 	/**
@@ -256,9 +256,14 @@ public class MethodBuilder implements Comparable<MethodBuilder> {
 	 */
 	private String methodNameMask(String name) {
 		String[] words = name
-				.replaceAll("[\\d\\'\\+\\-\\:\\;\\(\\)\\[\\]\\{\\}\\~\\^\\*\\&\\#\\@\\$\\<\\>\\,\\_\\.\\\"]", "")
+				.replaceAll("[\\d\\'\\+\\-\\:\\;\\(\\)\\[\\]\\{\\}\\~\\^\\*\\&\\#\\@\\$\\?\\!\\<\\>\\,\\_\\.\\\"]", "")
 				.split(" ");
-		String forReturn = words[0];
+		String forReturn = "";
+		if(this.rule.equals("Constructor"))
+			forReturn = words[0];
+		else
+			forReturn = words[0].replaceFirst(String.valueOf(words[0].charAt(0)),
+				String.valueOf(words[0].charAt(0)).toLowerCase());
 		for (int i = 1; i < words.length; i++) {
 			if (words[i].isEmpty())
 				continue;

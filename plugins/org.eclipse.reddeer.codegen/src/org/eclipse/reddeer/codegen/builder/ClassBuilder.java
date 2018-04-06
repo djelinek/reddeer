@@ -361,6 +361,15 @@ public class ClassBuilder {
 		}
 		return extendible;
 	}
+	
+	/**
+	 * Validates that imports list contains specific import
+	 * 
+	 * @return true/false
+	 */
+	public boolean constainsimport(String imp) {
+		return imports.contains(imp);
+	}
 
 	/**
 	 * Remove methods which will be inherit

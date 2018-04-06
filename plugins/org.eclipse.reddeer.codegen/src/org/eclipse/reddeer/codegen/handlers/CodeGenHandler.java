@@ -42,7 +42,7 @@ public class CodeGenHandler extends AbstractHandler {
 
 	private final Logger log = Logger.getLogger(CodeGenHandler.class);
 
-	private Shell lastActiveShell;
+	private static Shell lastActiveShell;
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -121,5 +121,9 @@ public class CodeGenHandler extends AbstractHandler {
 
 		log.info("Opening WizardDialog -> " + wizard.getWindowTitle() + "...");
 		dialog.open();
+	}
+	
+	public static Shell getLastActiveShell() {
+		return lastActiveShell;
 	}
 }
